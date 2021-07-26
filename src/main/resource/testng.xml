@@ -1,0 +1,22 @@
+ <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Amazon And Flipkart Assignment">
+	<listeners>
+		<listener
+			class-name="com.qa.ExtentReportListener.ExtentReportListener" />
+	</listeners>
+	<test name="Execute All Flipkart and Amazon Classes in a Batch">
+
+		<classes>
+			<class name="com.qa.testcases.FlipkartLandingPageTest"></class>
+			<class name="com.qa.testcases.FlipkartSearchResultsPageTest"></class>
+			<class name="com.qa.testcases.FlipkartCartPageTest"></class>
+			<class name="com.qa.testcases.AmazonLandingPageTest"></class>
+			<class name="com.qa.testcases.AmazonSearchResultsPageTest"></class>
+			<class name="com.qa.testcases.AmazonAndFlipkartPageTest"></class>
+
+
+		</classes>
+	</test>
+
+</suite>
