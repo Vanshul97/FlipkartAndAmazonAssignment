@@ -36,7 +36,7 @@ public class FlipkartSearchResultsPageTest extends TestBase {
 
 		FlipkartSearchResultsPage.clickFirstItem();
 		FlipkartSearchResultsPage.switchTab();
-		Double priceFlipkart = FlipkartSearchResultsPage.printPrice();
+		int priceFlipkart = FlipkartSearchResultsPage.printPrice();
 		System.out.println("Price of First Product is: " + "Rs."+priceFlipkart);
 		FlipkartSearchResultsPage.addProductToCart();
 //		Thread.sleep(10000);

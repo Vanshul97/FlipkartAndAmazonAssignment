@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -16,12 +17,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class TestBase {
 
-	public static WebDriver driver; // Global Variable
+	public static WebDriver driver;
 	public static Properties prop;
 
 	public TestBase() {
 		try {
-			prop = new Properties(); 
+			prop = new Properties();
 			FileInputStream ip = new FileInputStream(
 					"C:\\Users\\Vanshul Suneja\\eclipse-workspace\\AssignmentSmallCase\\src\\main\\java\\com\\qa\\config\\config.properties");
 			prop.load(ip);
@@ -33,11 +34,12 @@ public class TestBase {
 		}
 
 	}
-
+	
 	public static void intialization() {
 		String browser = prop.getProperty("browser");
 
 		if (browser.equals("Chrome")) {
+
 			WebDriverManager.chromedriver().setup();
 			driver = new ChromeDriver();
 		} else if (browser.equals("Firefox")) {

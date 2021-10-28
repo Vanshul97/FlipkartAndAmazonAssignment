@@ -6,20 +6,13 @@
   </listeners>
   <test thread-count="5" name="Execute All Flipkart and Amazon Classes in a Batch(failed)">
     <classes>
-      <class name="com.qa.testcases.AmazonAndFlipkartPageTest">
+      <class name="com.qa.testcases.FlipkartCartPageTest">
         <methods>
           <include name="Setup"/>
+          <include name="printTotalAmount"/>
           <include name="tearDown"/>
-          <include name="compareAndPrintLowerPrice"/>
         </methods>
-      </class> <!-- com.qa.testcases.AmazonAndFlipkartPageTest -->
-      <class name="com.qa.testcases.AmazonSearchResultsPageTest">
-        <methods>
-          <include name="tearDown"/>
-          <include name="Setup"/>
-          <include name="clickProductAndPrintPrice"/>
-        </methods>
-      </class> <!-- com.qa.testcases.AmazonSearchResultsPageTest -->
+      </class> <!-- com.qa.testcases.FlipkartCartPageTest -->
     </classes>
   </test> <!-- Execute All Flipkart and Amazon Classes in a Batch(failed) -->
 </suite> <!-- Failed suite [Amazon And Flipkart Assignment] -->

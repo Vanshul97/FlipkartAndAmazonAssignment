@@ -1,6 +1,7 @@
 package com.qa.testcases;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -21,7 +22,7 @@ public class AmazonAndFlipkartPageTest extends TestBase {
 	AmazonLandingPage AmazonLandingPage;
 	AmazonSearchResultsPage AmazonSearchResultsPage;
 	AmazonCartPage AmazonCartPage;
-	double flipkartTotalAmount;
+	int flipkartTotalAmount;
 	double amazonTotalAmount;
 
 	public AmazonAndFlipkartPageTest() {
@@ -49,7 +50,10 @@ public class AmazonAndFlipkartPageTest extends TestBase {
 		AmazonSearchResultsPage = AmazonLandingPage.clickSearch();
 		AmazonSearchResultsPage.printPrice();
 		AmazonSearchResultsPage.clickFirstItem();
+		ArrayList<String> tab = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(tab.get(2));
 		AmazonSearchResultsPage.addProductToCart();
+		Thread.sleep(5000);
 		AmazonSearchResultsPage.clickOnCartIcon();
 		amazonTotalAmount = AmazonCartPage.totalAmount();
 		System.out.println("Amount from Amazon is: " + amazonTotalAmount);

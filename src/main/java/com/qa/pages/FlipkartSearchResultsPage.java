@@ -50,11 +50,11 @@ public class FlipkartSearchResultsPage extends TestBase {
 		driver.switchTo().window(tab2.get(0));
 	}
 
-	public double printPrice() {
+	public int printPrice() {
 
 		String strPrice = priceProductPage.getText();
 		String strPriceReplaced = strPrice.replaceAll("[^0-9]", "");
-		double price = Double.parseDouble(strPriceReplaced);
+		int price = Integer.parseInt(strPriceReplaced);
 		return price;
 
 	}

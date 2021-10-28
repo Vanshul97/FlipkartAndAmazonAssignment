@@ -22,8 +22,8 @@ public class AmazonCartPage extends TestBase {
 
 	public double totalAmount() {
 		String price = subtotal.getText().trim();
-		String priceReplaced = price.replaceAll("[^0-9]", "");
-		double totalamount = Double.parseDouble(priceReplaced);
+		// String priceReplaced = price.replaceAll("[^0-9]", "");
+		double totalamount = Double.parseDouble(price.replace(",", ""));
 		return totalamount;
 
 	}
